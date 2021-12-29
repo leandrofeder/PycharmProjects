@@ -1,0 +1,56 @@
+from time import sleep
+from random import randint
+itens = ('PEDRA', 'PAPEL', 'TESOURA')
+computador = randint(0, 2)
+
+print("""SUAS OPÇÕES:
+[0] PEDRA
+[1] PAPEL
+[2] TESOURA""")
+jogador = int(input("\nFaça sua jogada: "))
+if jogador != 0 and jogador != 1 and jogador != 2:
+    print('\033[1;31mOPÇÃO INVÁLIDA\033[m')
+    quit()
+
+sleep(1)
+print('JO')
+sleep(1)
+print('KEN')
+sleep(1)
+print('PÔ')
+sleep(1)
+
+print('-=' * 11)
+print('\033[1;36mComputador\033[m jogou \033[1m{}\033[m'.format(itens[computador]))
+print('\033[1;32mJogador\033[m jogou \033[1m{}\033[m'.format(itens[jogador]))
+print('-=' * 11)
+
+if computador == 0: #Computador jogou PEDRA
+    if jogador == 0:
+        print('\033[1;33mEMPATE\033[m')
+    elif jogador == 1:
+        print('\033[1;32mJOGADOR\033[m VENCEU')
+    elif jogador == 2:
+        print('\033[1;36mCOMPUTADOR\033[m VENCEU')
+    else:
+        print('\033[1;31mOPÇÃO INVÁLIDA\033[m')
+
+elif computador == 1: #Computador jogou PAPEL
+    if jogador == 0:
+        print('\033[1;36mCOMPUTADOR\033[m VENCEU')
+    elif jogador == 1:
+        print('\033[1;33mEMPATE\033[m')
+    elif jogador == 2:
+        print('\033[1;32mJOGADOR\033[m VENCEU')
+    else:
+        print('\033[1;31mOPÇÃO INVÁLIDA\033[m')
+
+elif computador == 2: #Computador jogou TESOURA
+    if jogador == 0:
+        print('\033[1;32mJOGADOR\033[m VENCEU')
+    elif jogador == 1:
+        print('\033[1;36mCOMPUTADOR\033[m VENCEU')
+    elif jogador == 2:
+        print('\033[1;33mEMPATE\033[m')
+    else:
+        print('\033[1;31mOPÇÃO INVÁLIDA\033[m')
